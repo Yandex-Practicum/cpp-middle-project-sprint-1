@@ -12,6 +12,7 @@ class CryptoGuardConan(ConanFile):
         self.requires("openssl/3.1.1")
         self.requires("boost/1.83.0")
         self.requires("gtest/1.13.0")
+        self.tool_requires("cmake/3.30.0")
     
     def layout(self):
         self.folders.source = "."
