@@ -40,7 +40,7 @@ mkdir build ; cd build
 conan install --settings=build_type=Debug --build=missing ..
 
 # Вызывается каждый раз, когда необходимо собрать проект
-conan build --build=missing ..
+conan build --settings=build_type=Debug ..
 ```
 
 ### Команды для запуска приложения
