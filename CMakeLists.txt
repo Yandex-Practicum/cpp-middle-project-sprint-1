@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.30)
 project(CryptoGuard VERSION 1.0.0 LANGUAGES CXX)
 
+# Configure local githooks
+execute_process(
+        COMMAND git config core.hooksPath .githooks
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        RESULT_VARIABLE GIT_COMMAND_RESULT
+    )
+
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
