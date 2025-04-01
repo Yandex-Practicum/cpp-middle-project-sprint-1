@@ -23,5 +23,5 @@ if [[ $CLANG_FORMAT_OUTPUT ]]; then
         git status
         exit 1
 else
-        printf "\t ${GREEN}[PASS] No clang-format violations!${NC}\n"
+        printf "\n\t ${GREEN}[PASS] No clang-format violations!${NC}\n\n"
 fi
