@@ -13,7 +13,7 @@
 ## Начало работы
 
 1. Нажмите зелёную кнопку `Use this template`, затем `Create a new repository`.
-2. Назовите свой репозиторий. При выборе имени воспользуйтесь рекомендациями с сайта https://dongtienvietnam.com/github-repository-name-convention/.
+2. Назовите свой репозиторий.
 3. Склонируйте созданный репозиторий командой `git clone your-repository-name`.
 4. Создайте новую ветку командой `git switch -c development`.
 5. Откройте проект в `Visual Studio Code`.
