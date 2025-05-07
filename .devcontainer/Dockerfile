@@ -26,6 +26,7 @@ RUN pipx ensurepath
 
 # Copy conan profile
 COPY default /home/dev/.conan2/profiles/default
+RUN sudo chmod 666 /home/dev/.conan2/profiles/default
 
 # Set the default command
 CMD ["/bin/bash"]
