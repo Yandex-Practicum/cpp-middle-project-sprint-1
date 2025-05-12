@@ -1,19 +1,16 @@
 cmake_minimum_required(VERSION 3.30)
 project(CryptoGuard VERSION 1.0.0 LANGUAGES CXX)
 
-# Configure local githooks
-execute_process(
-        COMMAND git config core.hooksPath .githooks
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        RESULT_VARIABLE GIT_COMMAND_RESULT
-    )
-
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(-Wfatal-errors)
+    # Все предупреждения - это ошибки
+    add_compile_options(-Wfatal-errors -Wall -Werror)
+
+    # Не больше одной ошибки за раз
+    add_compile_options(-fmax-errors=1)
 endif()
 
 # Ищем необходимые библиотеки

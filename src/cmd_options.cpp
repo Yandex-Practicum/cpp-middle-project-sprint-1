@@ -6,6 +6,6 @@ ProgramOptions::ProgramOptions() : desc_("Allowed options") {}
 
 ProgramOptions::~ProgramOptions() = default;
 
-bool ProgramOptions::Parse(int argc, char *argv[]) { return false; }
+void ProgramOptions::Parse(int argc, char *argv[]) {}
 
 }  // namespace CryptoGuard

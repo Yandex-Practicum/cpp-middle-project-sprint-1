@@ -7,7 +7,7 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Launch CryptoGuard",
+            "name": "Launch Debug",
             "program": "${workspaceFolder}/build/CryptoGuard",
             "args": [
                 "-i",
@@ -15,7 +15,9 @@
                 "--command",
                 "checksum"
             ],
-            "cwd": "${workspaceFolder}/build"
+            "cwd": "${workspaceFolder}/build",
+            "preLaunchTask": "GCC: Build Debug app",
+            "initCommands": ["settings set target.disable-aslr false"]
         }
 
     ]

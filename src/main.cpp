@@ -1,5 +1,6 @@
 #include "cmd_options.h"
 #include "crypto_guard_ctx.h"
+#include <algorithm>
 #include <array>
 #include <iostream>
 #include <openssl/evp.h>
@@ -54,13 +55,15 @@ int main(int argc, char *argv[]) {
         int outLen;
 
         // Обрабатываем первые N символов
+        std::copy(input.begin(), std::next(input.begin(), 16), inBuf.begin());
         EVP_CipherUpdate(ctx, outBuf.data(), &outLen, inBuf.data(), static_cast<int>(16));
         for (int i = 0; i < outLen; ++i) {
             output.push_back(outBuf[i]);
         }
 
         // Обрабатываем оставшиеся символы
-        EVP_CipherUpdate(ctx, outBuf.data(), &outLen, inBuf.data(), static_cast<int>(16));
+        std::copy(std::next(input.begin(), 16), input.end(), inBuf.begin());
+        EVP_CipherUpdate(ctx, outBuf.data(), &outLen, inBuf.data(), static_cast<int>(input.size() - 16));
         for (int i = 0; i < outLen; ++i) {
             output.push_back(outBuf[i]);
         }
