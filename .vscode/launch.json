@@ -7,7 +7,7 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Launch CryptoGuard",
+            "name": "Launch Debug",
             "program": "${workspaceFolder}/build/CryptoGuard",
             "args": [
                 "-i",
