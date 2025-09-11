@@ -7,8 +7,23 @@
             "command": [
                 "mkdir ${workspaceFolder}/build ; ",
                 "cd ${workspaceFolder}/build &&",
-                "conan install -b missing -s build_type=Debug .. && ",
                 "conan build -b missing -s build_type=Debug .."
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "hide": false,
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "GCC: Build Release app",
+            "type": "shell",
+            "command": [
+                "mkdir ${workspaceFolder}/build ; ",
+                "cd ${workspaceFolder}/build &&",
+                "conan build -b missing -s build_type=Release .."
             ],
             "presentation": {
                 "clear": true
